@@ -41,8 +41,8 @@ export const commonStyles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonText: {
-    fontSize: 16,
-    fontWeight: "500",
+    fontSize: 20,
+    fontWeight: "600",
     color: "#000",
   },
   row: {
@@ -70,12 +70,13 @@ export const productStyles = StyleSheet.create({
     borderRadius: 8,
   },
   productName: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: "bold",
     marginTop: 8,
   },
   productPrice: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "600",
     marginTop: 4,
   },
   quantityContainer: {
@@ -117,6 +118,11 @@ export const cartStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  itemImg: {
+    width: 20,
+    height: 20,
+    borderRadius: 8, // just for testing
+  },
   emptyText: {
     fontSize: 18,
     color: "#666",
@@ -148,11 +154,11 @@ export const cartStyles = StyleSheet.create({
   },
   itemName: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "bold",
   },
   itemPrice: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "500",
     marginTop: 4,
   },
   quantityContainer: {
@@ -179,7 +185,7 @@ export const cartStyles = StyleSheet.create({
     marginBottom: 16,
   },
   totalLabel: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "500",
   },
   totalAmount: {

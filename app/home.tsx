@@ -1,5 +1,12 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { FlatList, Image, Pressable, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  Pressable,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { router, useNavigation } from "expo-router";
@@ -125,4 +132,3 @@ export default function Home() {
 function setShouldRenderIcon(arg0: boolean): void {
   throw new Error("Function not implemented.");
 }
-
