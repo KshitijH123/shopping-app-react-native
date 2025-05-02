@@ -13,7 +13,7 @@ export default function RootLayout() {
           headerStyle: {
             backgroundColor: "orange",
           },
-          headerTintColor: "#333",
+          headerTintColor: "#fff",
           headerTitleStyle: {
             fontWeight: "bold",
           },
@@ -23,7 +23,6 @@ export default function RootLayout() {
           name="index"
           options={{
             title: "Sign Up",
-            headerShown: false,
           }}
         />
         <Stack.Screen
