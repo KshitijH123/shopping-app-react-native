@@ -1,21 +1,29 @@
 import { useRouter } from "expo-router";
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   Pressable,
   ScrollView,
   Text,
-  View
+  TextInput,
+  View,
 } from "react-native";
 import { useCart } from "./provider/cart-provider";
 import { cartStyles, commonStyles } from "./styles/styles";
 
 export default function Cart() {
-  const { items, updateQuantity, getTotal } = useCart();
-  console.log("dddd" + items);
+  const { items, updateQuantity, getTotal, setAddress } = useCart();
+  const [address, setAdd] = useState("");
+
   const router = useRouter();
 
   const handleCheckout = () => {
+    if (address.length == 0) {
+      alert("Please enter a valid address.");
+      return;
+    }
+
+    setAddress(address);
     router.push("/order-confirmation");
   };
 
@@ -82,6 +90,21 @@ export default function Cart() {
           <Text style={cartStyles.totalLabel}>Total:</Text>
           <Text style={cartStyles.totalAmount}>₹ {getTotal().toFixed(2)}</Text>
         </View>
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 20,
+            textAlign: "left",
+          }}
+        >
+          Enter Your Address
+        </Text>
+        <TextInput
+          style={commonStyles.input}
+          placeholder="Adreess"
+          value={address}
+          onChangeText={setAdd}
+        />
         <Pressable style={cartStyles.paymentButton} onPress={handleCheckout}>
           <Text style={cartStyles.paymentButtonText}>Payment</Text>
         </Pressable>

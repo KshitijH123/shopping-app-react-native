@@ -5,7 +5,8 @@ import { useCart } from "./provider/cart-provider";
 import { cartStyles, commonStyles } from "./styles/styles";
 
 export default function OrderConfirmation() {
-  const { items, getTotal } = useCart();
+  const { items, getTotal, address } = useCart();
+
   const router = useRouter();
   const orderNumber = Math.floor(Math.random() * 10000);
 
@@ -41,7 +42,7 @@ export default function OrderConfirmation() {
 
       <View style={commonStyles.section}>
         <Text style={commonStyles.sectionTitle}>Shipping Details:</Text>
-        <Text>ccc</Text>
+        <Text>{address}</Text>
       </View>
 
       <View style={commonStyles.section}>
