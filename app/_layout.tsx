@@ -34,7 +34,14 @@ export default function RootLayout() {
                 onPress={() => {
                   router.push("/cart");
                 }}
-                style={{ marginRight: 12 }}
+                style={{
+                  marginRight: 12,
+                  padding: 5,
+                  height: 36,
+                  width: 36,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
                 <MaterialCommunityIcons name="cart" size={24} color="#fff" />
               </TouchableOpacity>
