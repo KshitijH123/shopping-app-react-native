@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { router, Stack } from "expo-router";
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { CartProvider } from "./provider/cart-provider";
 
 export default function RootLayout() {
@@ -35,9 +35,11 @@ export default function RootLayout() {
                 onPress={() => {
                   router.push("/cart");
                 }}
-                style={{ marginRight: 15 }}
+                style={{ marginRight: 12 }}
               >
-                <MaterialCommunityIcons name="cart" size={26} color="#fff" />
+                <View style={{ height: 24 }}>
+                  <MaterialCommunityIcons name="cart" size={24} color="#fff" />
+                </View>
               </TouchableOpacity>
             ),
           }}
