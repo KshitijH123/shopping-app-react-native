@@ -12,19 +12,12 @@ interface CartContextType {
   items: CartItem[];
   updateQuantity: (id: string, quantity: number) => void;
   getTotal: () => number;
-  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
-
-  const clearCart = () => {
-    setItems((current) =>
-      current.map((item) => ({ ...item, quantity: 0 }))
-    );
-  };
 
   const updateQuantity = (id: string, quantity: number) => {
     setItems((current) =>
@@ -40,7 +33,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ items, updateQuantity, getTotal, clearCart }}
+      value={{ items, updateQuantity, getTotal }}
     >
       {children}
     </CartContext.Provider>

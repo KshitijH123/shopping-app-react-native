@@ -5,7 +5,7 @@ import { useCart } from "./provider/cart-provider";
 import { cartStyles, commonStyles } from "./styles/styles";
 
 export default function OrderConfirmation() {
-  const { items, getTotal, clearCart } = useCart();
+  const { items, getTotal } = useCart();
   const router = useRouter();
   const orderNumber = Math.floor(Math.random() * 10000);
 
