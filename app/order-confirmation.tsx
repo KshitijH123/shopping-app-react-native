@@ -1,7 +1,8 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { useCart } from "./cart-provider";
+import { Alert, Pressable, ScrollView, Text, View } from "react-native";
+import { useCart } from "./provider/cart-provider";
+import { cartStyles, commonStyles } from "./styles/styles";
 
 export default function OrderConfirmation() {
   const { items, getTotal, clearCart } = useCart();
@@ -15,35 +16,40 @@ export default function OrderConfirmation() {
       [
         {
           text: "OK",
-          onPress: () => {
-            clearCart();
-            router.push("/home");
-          },
+          onPress: () => {},
         },
       ]
     );
   };
 
+  const filteredList = items.filter((item) => item.quantity > 0);
+
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Order Confirmation</Text>
+    <ScrollView
+      style={{
+        flex: 1,
+        padding: 20,
+        backgroundColor: "#fff",
+      }}
+    >
+      <Text style={commonStyles.title}>Order Confirmation</Text>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Order Number:</Text>
-        <Text style={styles.orderNumber}>{orderNumber}</Text>
+      <View style={commonStyles.section}>
+        <Text style={commonStyles.sectionTitle}>Order Number:</Text>
+        <Text>{orderNumber}</Text>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Shipping Details:</Text>
-        <Text style={styles.shippingAddress}>ccc</Text>
+      <View style={commonStyles.section}>
+        <Text style={commonStyles.sectionTitle}>Shipping Details:</Text>
+        <Text>ccc</Text>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Order Details:</Text>
-        {items.map((item) => (
-          <View key={item.id} style={styles.orderItem}>
-            <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemPrice}>
+      <View style={commonStyles.section}>
+        <Text style={commonStyles.sectionTitle}>Order Details:</Text>
+        {filteredList.map((item) => (
+          <View key={item.id} style={cartStyles.cartItem}>
+            <Text>{item.name}</Text>
+            <Text>
               ₹{item.price} x {item.quantity} = ₹
               {(item.price * item.quantity).toFixed(2)}
             </Text>
@@ -51,85 +57,14 @@ export default function OrderConfirmation() {
         ))}
       </View>
 
-      <View style={styles.totalContainer}>
-        <Text style={styles.totalLabel}>Total:</Text>
-        <Text style={styles.totalAmount}>₹ {getTotal().toFixed(2)}</Text>
+      <View style={cartStyles.totalContainer}>
+        <Text style={cartStyles.totalLabel}>Total:</Text>
+        <Text style={cartStyles.totalAmount}>₹ {getTotal().toFixed(2)}</Text>
       </View>
 
-      <Pressable style={styles.payButton} onPress={handlePay}>
-        <Text style={styles.payButtonText}>Pay</Text>
+      <Pressable style={commonStyles.button} onPress={handlePay}>
+        <Text style={commonStyles.buttonText}>Pay</Text>
       </Pressable>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    padding: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: "500",
-    marginBottom: 8,
-  },
-  orderNumber: {
-    fontSize: 16,
-  },
-  shippingAddress: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  orderItem: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "#eee",
-  },
-  itemName: {
-    fontSize: 16,
-  },
-  itemPrice: {
-    fontSize: 16,
-    fontWeight: "500",
-  },
-  totalContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
-    marginBottom: 30,
-    paddingTop: 20,
-    borderTopWidth: 1,
-    borderTopColor: "#eee",
-  },
-  totalLabel: {
-    fontSize: 18,
-    fontWeight: "500",
-  },
-  totalAmount: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  payButton: {
-    backgroundColor: "#90EE90",
-    padding: 16,
-    borderRadius: 8,
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  payButtonText: {
-    fontSize: 16,
-    fontWeight: "500",
-  },
-});

@@ -2,13 +2,14 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { router, Stack } from "expo-router";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { CartProvider } from "./cart-provider";
+import { CartProvider } from "./provider/cart-provider";
 
 export default function RootLayout() {
   return (
     <CartProvider>
       <Stack
         screenOptions={{
+          statusBarBackgroundColor: "#FF8C00",
           headerStyle: {
             backgroundColor: "orange",
           },

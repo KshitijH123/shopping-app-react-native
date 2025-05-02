@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import React from "react";
+import { commonStyles } from "./styles/styles";
 
 export default function SignUp() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -27,75 +28,41 @@ export default function SignUp() {
 
   if (!showOTP) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Sign Up</Text>
-        <Text style={styles.subtitle}>Enter your mobile number to Get OTP</Text>
+      <View style={commonStyles.container}>
+        <Text style={commonStyles.title}>Sign Up</Text>
+        <Text style={commonStyles.subtitle}>
+          Enter your mobile number to Get OTP
+        </Text>
         <TextInput
-          style={styles.input}
+          style={commonStyles.input}
           placeholder="Enter your mobile number"
           keyboardType="phone-pad"
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />
-        <Pressable style={styles.button} onPress={handleSendOTP}>
-          <Text style={styles.buttonText}>Send OTP</Text>
+        <Pressable style={commonStyles.button} onPress={handleSendOTP}>
+          <Text style={commonStyles.buttonText}>Send OTP</Text>
         </Pressable>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
-      <Text style={styles.subtitle}>Enter Your OTP</Text>
+    <View style={commonStyles.container}>
+      <Text style={commonStyles.title}>Sign Up</Text>
+      <Text style={commonStyles.subtitle}>Enter Your OTP</Text>
       <TextInput
-        style={styles.input}
+        style={commonStyles.input}
         placeholder="000000"
         keyboardType="number-pad"
         maxLength={6}
         value={otp}
         onChangeText={setOTP}
       />
-      <Pressable style={styles.button} onPress={handleVerifyOTP}>
-        <Text style={styles.buttonText}>Verify</Text>
+      <Pressable style={commonStyles.button} onPress={handleVerifyOTP}>
+        <Text style={commonStyles.buttonText}>Verify</Text>
       </Pressable>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: "center",
-    backgroundColor: "#fff",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  subtitle: {
-    fontSize: 16,
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
-    padding: 15,
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: "#e0e0e0",
-    padding: 15,
-    borderRadius: 8,
-    alignItems: "center",
-  },
-  buttonText: {
-    color: "#666",
-    fontSize: 16,
-  },
-});

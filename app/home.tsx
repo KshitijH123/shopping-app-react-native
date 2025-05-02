@@ -3,12 +3,13 @@ import {
   FlatList,
   Image,
   Pressable,
-  StyleSheet,
   Text,
-  View,
+  View
 } from "react-native";
 
-import { CartItem, useCart } from "./cart-provider";
+import { CartItem, useCart } from "./provider/cart-provider";
+import { commonStyles, homeStyle, productStyles } from "./styles/styles";
+
 
 const PRODUCTS: {
   id: string;
@@ -85,108 +86,45 @@ export default function Home() {
   };
 
   const renderProduct = ({ item }: { item: CartItem }) => (
-    <View style={styles.productCard}>
-      <Image source={{ uri: item.imageUrl }} style={styles.productImage} />
-      <Text style={styles.productName}>{item.name}</Text>
-      <Text style={styles.productPrice}>₹ {item.price}</Text>
+    <View style={productStyles.productCard}>
+      <Image
+        source={{ uri: item.imageUrl }}
+        style={productStyles.productImage}
+      />
+      <Text style={productStyles.productName}>{item.name}</Text>
+      <Text style={productStyles.productPrice}>₹ {item.price}</Text>
       {quantities[item.id] > 0 ? (
         <>
-          <View style={styles.quantityContainer}>
+          <View style={productStyles.quantityContainer}>
             <Pressable onPress={() => updateQty(item.id, item.quantity - 1)}>
-              <Text style={styles.quantityButton}>-</Text>
+              <Text style={productStyles.quantityButton}>-</Text>
             </Pressable>
-            <Text style={styles.quantity}>{quantities[item.id]}</Text>
+            <Text style={productStyles.quantity}>{quantities[item.id]}</Text>
             <Pressable onPress={() => updateQty(item.id, item.quantity + 1)}>
-              <Text style={styles.quantityButton}>+</Text>
+              <Text style={productStyles.quantityButton}>+</Text>
             </Pressable>
           </View>
         </>
       ) : (
         <Pressable
-          style={styles.addButton}
+          style={homeStyle.addButton}
           onPress={() => updateQty(item.id, item.quantity + 1)}
         >
-          <Text style={styles.addButtonText}>Add to Cart</Text>
+          <Text style={homeStyle.addButtonText}>Add to Cart</Text>
         </Pressable>
       )}
     </View>
   );
 
   return (
-    <View style={styles.container}>
+    <View style={commonStyles.container}>
       <FlatList
         data={items}
         renderItem={renderProduct}
         keyExtractor={(item) => item.id}
         numColumns={2}
-        columnWrapperStyle={styles.row}
+        columnWrapperStyle={commonStyles.row}
       />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    padding: 10,
-  },
-  row: {
-    justifyContent: "space-between",
-  },
-  productCard: {
-    width: "48%",
-    backgroundColor: "#fff",
-    padding: 10,
-    marginBottom: 15,
-    borderRadius: 8,
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
-  productImage: {
-    width: "100%",
-    height: 150,
-    resizeMode: "cover",
-    borderRadius: 8,
-  },
-  productName: {
-    fontSize: 16,
-    marginTop: 8,
-  },
-  productPrice: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 4,
-  },
-  quantityContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 8,
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 20,
-    padding: 5,
-  },
-  quantityButton: {
-    fontSize: 20,
-    paddingHorizontal: 10,
-  },
-  quantity: {
-    fontSize: 16,
-    paddingHorizontal: 15,
-  },
-  addButton: {
-    backgroundColor: "#90EE90",
-    padding: 10,
-    borderRadius: 20,
-    marginTop: 8,
-    alignItems: "center",
-  },
-  addButtonText: {
-    color: "#000",
-  },
-});
