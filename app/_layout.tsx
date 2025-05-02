@@ -36,9 +36,7 @@ export default function RootLayout() {
                 }}
                 style={{ marginRight: 12 }}
               >
-                <View style={{ height: 24 }}>
-                  <MaterialCommunityIcons name="cart" size={24} color="#fff" />
-                </View>
+                <MaterialCommunityIcons name="cart" size={24} color="#fff" />
               </TouchableOpacity>
             ),
           }}
