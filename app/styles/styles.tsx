@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const commonStyles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
     justifyContent: "center",
     backgroundColor: "#fff",
   },
@@ -39,9 +39,11 @@ export const commonStyles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     marginBottom: 20,
+    width: "100%",
+    height:50,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: "600",
     color: "#000",
   },
@@ -119,8 +121,8 @@ export const cartStyles = StyleSheet.create({
     alignItems: "center",
   },
   itemImg: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
     borderRadius: 8, // just for testing
   },
   emptyText: {
@@ -144,8 +146,8 @@ export const cartStyles = StyleSheet.create({
     elevation: 2,
   },
   itemImage: {
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
     borderRadius: 8,
   },
   itemInfo: {
