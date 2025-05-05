@@ -1,51 +1,27 @@
-# Welcome to your Expo app 👋
+# Shopping App React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native shopping app built with [Expo](https://expo.dev).
 
-## Get started
+## Screenshots
 
-1. Install dependencies
+### Sign Up Screen
+![Sign Up Screen](/screenshots/1.jpg)
+![OTP Verification Screen](/screenshots/2.jpg)
 
-   ```bash
-   npm install
-   ```
+### Product List
+![Product List](/screenshots/3.jpg)
+![Add To Cart](/screenshots/4.jpg)
 
-2. Start the app
+### Cart
+![Shopping Cart](/screenshots/5.jpg)
 
-   ```bash
-   npx expo start
-   ```
+### Order Confirmation
+![Order Confirmation](/screenshots/6.jpg)
+![Order Successful](/screenshots/7.jpg)
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+![Video](/screenshots/video.mp4)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# shopping-app-react-native
+## Demo Video
+A demo video of the app is available in the `/screenshots/video.mp4` file.
