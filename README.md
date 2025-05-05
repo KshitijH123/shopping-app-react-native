@@ -4,20 +4,28 @@ This is a React Native shopping app built with [Expo](https://expo.dev).
 
 ## Screenshots
 
-### Sign Up Screen
-<img src="/screenshots/1.jpg" width="200" alt="Sign Up Screen" />
-<img src="/screenshots/2.jpg" width="200" alt="OTP Verification Screen" />
+### Sign Up Flow
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+  <img src="/screenshots/1.jpg" width="200" alt="Sign Up Screen" />
+  <img src="/screenshots/2.jpg" width="200" alt="OTP Verification Screen" />
+</div>
 
-### Product List
-<img src="/screenshots/3.jpg" width="200" alt="Product List" />
-<img src="/screenshots/4.jpg" width="200" alt="Add To Cart" />
+### Product Browsing
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+  <img src="/screenshots/3.jpg" width="200" alt="Product List" />
+  <img src="/screenshots/4.jpg" width="200" alt="Add To Cart" />
+</div>
 
-### Cart
-<img src="/screenshots/5.jpg" width="200" alt="Shopping Cart" />
+### Shopping Cart
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+  <img src="/screenshots/5.jpg" width="200" alt="Shopping Cart" />
+</div>
 
-### Order Confirmation
-<img src="/screenshots/6.jpg" width="200" alt="Order Confirmation" />
-<img src="/screenshots/7.jpg" width="200" alt="Order Successful" />
+### Checkout Flow
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px;">
+  <img src="/screenshots/6.jpg" width="200" alt="Order Confirmation" />
+  <img src="/screenshots/7.jpg" width="200" alt="Order Successful" />
+</div>
 
 ## Demo Video
 <video width="300" controls>
