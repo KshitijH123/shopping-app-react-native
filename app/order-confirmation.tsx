@@ -36,12 +36,12 @@ export default function OrderConfirmation() {
       <Text style={commonStyles.title}>Confirm Your Order</Text>
 
       <View style={commonStyles.section}>
-        <Text style={commonStyles.sectionTitle}>•Order Number:</Text>
-          <Text> {orderNumber}</Text>
+        <Text style={commonStyles.sectionTitle}>Order Number:</Text>
+        <Text> {orderNumber}</Text>
       </View>
 
       <View style={commonStyles.section}>
-        <Text style={commonStyles.sectionTitle}>•Order Details:</Text>
+        <Text style={commonStyles.sectionTitle}>Order Details:</Text>
         {filteredList.map((item) => (
           <View key={item.id} style={cartStyles.cartItem}>
             <Image source={{ uri: item.imageUrl }} style={cartStyles.itemImg} />
@@ -54,12 +54,12 @@ export default function OrderConfirmation() {
         ))}
       </View>
       <View style={commonStyles.section}>
-        <Text style={commonStyles.sectionTitle}>•Shipping Details:</Text>
+        <Text style={commonStyles.sectionTitle}>Shipping Details:</Text>
         <Text>{address}</Text>
       </View>
 
       <View style={cartStyles.totalContainer}>
-        <Text style={cartStyles.totalLabel}>•Total:</Text>
+        <Text style={cartStyles.totalLabel}>Total:</Text>
         <Text style={cartStyles.totalAmount}>₹ {getTotal().toFixed(2)}</Text>
       </View>
 

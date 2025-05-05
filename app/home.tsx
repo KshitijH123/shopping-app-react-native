@@ -1,15 +1,6 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import {
-  FlatList,
-  Image,
-  Pressable,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React, { useState } from "react";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
 
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { router, useNavigation } from "expo-router";
 import { CartItem, useCart } from "./provider/cart-provider";
 import { commonStyles, homeStyle, productStyles } from "./styles/styles";
 
