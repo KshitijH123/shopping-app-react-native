@@ -5,23 +5,24 @@ This is a React Native shopping app built with [Expo](https://expo.dev).
 ## Screenshots
 
 ### Sign Up Screen
-![Sign Up Screen](/screenshots/1.jpg)
-![OTP Verification Screen](/screenshots/2.jpg)
+<img src="/screenshots/1.jpg" width="300" alt="Sign Up Screen" />
+<img src="/screenshots/2.jpg" width="300" alt="OTP Verification Screen" />
 
 ### Product List
-![Product List](/screenshots/3.jpg)
-![Add To Cart](/screenshots/4.jpg)
+<img src="/screenshots/3.jpg" width="300" alt="Product List" />
+<img src="/screenshots/4.jpg" width="300" alt="Add To Cart" />
 
 ### Cart
-![Shopping Cart](/screenshots/5.jpg)
+<img src="/screenshots/5.jpg" width="300" alt="Shopping Cart" />
 
 ### Order Confirmation
-![Order Confirmation](/screenshots/6.jpg)
-![Order Successful](/screenshots/7.jpg)
-
-
-![Video](/screenshots/video.mp4)
-
+<img src="/screenshots/6.jpg" width="300" alt="Order Confirmation" />
+<img src="/screenshots/7.jpg" width="300" alt="Order Successful" />
 
 ## Demo Video
+<video width="300" controls>
+  <source src="/screenshots/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 A demo video of the app is available in the `/screenshots/video.mp4` file.
